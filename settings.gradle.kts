@@ -16,7 +16,6 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven("https://cardinalcommerceprod.jfrog.io/artifactory/android")
     }
 }
 
