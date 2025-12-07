@@ -16,6 +16,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // CardinalCommerce artifacts required by PayPal Checkout SDK
+        maven("https://mobile-sdk.jfrog.io/artifactory/android")
     }
 }
 
