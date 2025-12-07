@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".SchoolApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,23 +17,7 @@
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
-            android:name=".OrdersAdapter"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".Order"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
             android:name=".ReceiptActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".FirebaseOrderMapper"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".GooglePayConfig"
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
@@ -40,27 +25,7 @@
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
-            android:name=".CartAdapter"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
             android:name=".CartActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".ProductAdapter"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".CartManager"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".CartItem"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".Product"
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
@@ -69,6 +34,10 @@
             android:theme="@style/Theme.Schoolapp" />
         <activity
             android:name=".CustomerMainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Schoolapp" />
+        <activity
+            android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity

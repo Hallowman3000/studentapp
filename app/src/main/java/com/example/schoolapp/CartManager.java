@@ -1,6 +1,7 @@
 package com.example.schoolapp;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class CartManager {
@@ -28,6 +29,9 @@ public class CartManager {
                 return;
             }
         }
+        if (product.getImageResName() == null) {
+            product.setImageResName("product_placeholder_1");
+        }
         items.add(new CartItem(product));
     }
 
@@ -41,6 +45,17 @@ public class CartManager {
                 } else {
                     item.setQuantity(q);
                 }
+                return;
+            }
+        }
+    }
+
+    public void removeItem(String productId) {
+        Iterator<CartItem> iterator = items.iterator();
+        while (iterator.hasNext()) {
+            CartItem item = iterator.next();
+            if (item.getProduct().getId().equals(productId)) {
+                iterator.remove();
                 return;
             }
         }

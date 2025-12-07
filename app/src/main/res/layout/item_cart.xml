@@ -13,9 +13,19 @@
         android:orientation="horizontal"
         android:padding="12dp">
 
+        <ImageView
+            android:id="@+id/imgCartItem"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/product_placeholder_3"
+            android:scaleType="centerCrop"
+            android:src="@drawable/product_placeholder_1"
+            android:contentDescription="Cart item image" />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -24,42 +34,62 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Product name"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCartPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="KSh 0.00"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvCartQty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Qty: 1"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:text="Qty: 1" />
 
             <TextView
                 android:id="@+id/tvCartAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="KSh 0.00"
-                android:layout_marginTop="4dp" />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/btnPlus"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:background="@android:color/transparent"
                 android:src="@android:drawable/ic_input_add"
-                android:background="@android:color/transparent" />
+                android:contentDescription="Increase quantity" />
 
             <ImageButton
                 android:id="@+id/btnMinus"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_media_rew"
+                android:contentDescription="Decrease quantity" />
+
+            <ImageButton
+                android:id="@+id/btnRemove"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@android:color/transparent"
                 android:src="@android:drawable/ic_delete"
-                android:background="@android:color/transparent" />
+                android:contentDescription="Remove item" />
         </LinearLayout>
     </LinearLayout>
 

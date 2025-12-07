@@ -2,8 +2,8 @@ package com.example.schoolapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +28,7 @@ public class CartActivity extends AppCompatActivity {
         recyclerCart.setLayoutManager(new LinearLayoutManager(this));
 
         List<CartItem> items = CartManager.getInstance().getItems();
-        adapter = new CartAdapter(items);
+        adapter = new CartAdapter(items, this::updateTotal);
         recyclerCart.setAdapter(adapter);
 
         tvTotal = findViewById(R.id.tvCartTotal);
