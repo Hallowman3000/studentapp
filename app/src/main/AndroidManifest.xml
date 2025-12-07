@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,19 +19,7 @@
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
-            android:name=".OrdersAdapter"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".Order"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
             android:name=".ReceiptActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".FirebaseOrderMapper"
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
@@ -37,27 +27,7 @@
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
-            android:name=".CartAdapter"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
             android:name=".CartActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".ProductAdapter"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".CartManager"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".CartItem"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
-            android:name=".Product"
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
@@ -73,6 +43,10 @@
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Schoolapp" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.Schoolapp">
@@ -83,5 +57,4 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
