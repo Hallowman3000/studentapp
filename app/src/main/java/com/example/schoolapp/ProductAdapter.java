@@ -7,22 +7,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-<<<<<<< HEAD
 import android.widget.Toast;
-=======
->>>>>>> 9820f5e673f6959a4f4a47758a47272a917df61d
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
-    private Context context;
-    private List<Product> productList;
+    private final Context context;
+    private final List<Product> productList;
 
     public ProductAdapter(Context context, List<Product> productList) {
         this.context = context;
@@ -39,13 +35,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-<<<<<<< HEAD
         Product product = productList.get(position);
 
         holder.name.setText(product.getName());
-        holder.price.setText("KSh " + product.getPrice());
-
-        // You can add your own logic here to load images from local storage
+        holder.price.setText(String.format("KSh %.2f", product.getPrice()));
+        holder.image.setImageResource(resolveImage(product, holder.itemView));
 
         holder.addBtn.setOnClickListener(v -> {
             CartManager.getInstance().addToCart(product);
@@ -53,13 +47,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                     product.getName() + " added to cart",
                     Toast.LENGTH_SHORT).show();
         });
-=======
-        Product p = products.get(position);
-        holder.tvName.setText(p.getName());
-        holder.tvPrice.setText(String.format("KSh %.2f", p.getPrice()));
-        holder.ivProductThumb.setImageResource(resolveImage(p, holder.itemView));
-        holder.btnAdd.setOnClickListener(v -> listener.onAddToCart(p));
->>>>>>> 9820f5e673f6959a4f4a47758a47272a917df61d
     }
 
     @Override
@@ -81,7 +68,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     static class ProductViewHolder extends RecyclerView.ViewHolder {
 
-<<<<<<< HEAD
         ImageView image;
         TextView name, price;
         Button addBtn;
@@ -92,20 +78,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             name = itemView.findViewById(R.id.productNameText);
             price = itemView.findViewById(R.id.productPriceText);
             addBtn = itemView.findViewById(R.id.addToCartBtn);
-=======
-        TextView tvName, tvPrice;
-        Button btnAdd;
-        ImageView ivProductThumb;
-
-        public ProductViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvName = itemView.findViewById(R.id.tvProductName);
-            tvPrice = itemView.findViewById(R.id.tvProductPrice);
-            btnAdd = itemView.findViewById(R.id.btnAddToCart);
-            ivProductThumb = itemView.findViewById(R.id.ivProductThumb);
->>>>>>> 9820f5e673f6959a4f4a47758a47272a917df61d
         }
     }
-
-    }
-
+}
