@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
-android {9
+android {
     namespace = "com.example.schoolapp"
     compileSdk = 36
 
@@ -52,8 +52,4 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:34.6.0"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9820f5e673f6959a4f4a47758a47272a917df61d
