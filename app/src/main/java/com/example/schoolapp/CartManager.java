@@ -46,6 +46,16 @@ public class CartManager {
         }
     }
 
+    public void removeItem(Product product) {
+        for (int i = 0; i < items.size(); i++) {
+            CartItem item = items.get(i);
+            if (item.getProduct().getId().equals(product.getId())) {
+                items.remove(i);
+                return;
+            }
+        }
+    }
+
     public double getTotal() {
         double total = 0;
         for (CartItem item : items) {

@@ -41,13 +41,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/btnPayGoogle"
+    <EditText
+        android:id="@+id/etPaypalEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Pay with Google Wallet"
-        android:layout_marginTop="24dp"
+        android:hint="PayPal account email"
+        android:inputType="textEmailAddress"
+        android:background="@android:color/white"
+        android:padding="8dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/etDeliveryAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnPayPal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pay with PayPal"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/etPaypalEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
