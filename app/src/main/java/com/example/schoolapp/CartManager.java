@@ -28,6 +28,7 @@ public class CartManager {
                 return;
             }
         }
+        // Ensure your CartItem constructor uses quantity=1 by default
         items.add(new CartItem(product));
     }
 
