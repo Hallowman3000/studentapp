@@ -53,6 +53,29 @@ public class CustomerMainActivity extends AppCompatActivity {
             Intent i = new Intent(CustomerMainActivity.this, CheckoutActivity.class);
             startActivity(i);
         });
+<<<<<<< HEAD
+=======
+        recyclerProducts.setAdapter(adapter);
+
+        ImageButton btnCart = findViewById(R.id.btnCart);
+        btnCart.setOnClickListener(v ->
+                startActivity(new Intent(this, CartActivity.class))
+        );
+
+        ImageButton btnHome = findViewById(R.id.btnHome);
+        ImageButton btnCartBottom = findViewById(R.id.btnCartBottom);
+        ImageButton btnProfile = findViewById(R.id.btnProfile);
+
+        btnHome.setOnClickListener(v -> recyclerProducts.smoothScrollToPosition(0));
+        btnCartBottom.setOnClickListener(v ->
+                startActivity(new Intent(this, CartActivity.class))
+        );
+        btnProfile.setOnClickListener(v ->
+                startActivity(new Intent(this, LoginActivity.class))
+        );
+
+        loadProducts();
+>>>>>>> 9820f5e673f6959a4f4a47758a47272a917df61d
     }
 
     private void seedSampleProducts() {
@@ -96,6 +119,7 @@ public class CustomerMainActivity extends AppCompatActivity {
     private void loadProductsFromFirestore() {
         db.collection("products")
                 .get()
+<<<<<<< HEAD
                 .addOnCompleteListener(this::handleProductsResult);
     }
 
@@ -126,5 +150,40 @@ public class CustomerMainActivity extends AppCompatActivity {
         Toast.makeText(this,
                 "Loaded " + productList.size() + " products",
                 Toast.LENGTH_SHORT).show();
+=======
+                .addOnSuccessListener(snapshots -> {
+                    productList.clear();
+                    for (QueryDocumentSnapshot doc : snapshots) {
+                        Product p = doc.toObject(Product.class);
+                        p.setId(doc.getId());
+                        if (p.getImageResName() == null || p.getImageResName().isEmpty()) {
+                            p.setImageResName("ic_product_placeholder");
+                        }
+                        productList.add(p);
+                    }
+                    if (productList.isEmpty()) {
+                        productList.addAll(seedSamples());
+                    }
+                    adapter.notifyDataSetChanged();
+                })
+                .addOnFailureListener(e -> {
+                    productList.clear();
+                    productList.addAll(seedSamples());
+                    adapter.notifyDataSetChanged();
+                    Toast.makeText(this,
+                            "Failed to load products: " + e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                });
+    }
+
+    private List<Product> seedSamples() {
+        List<Product> samples = new ArrayList<>();
+        samples.add(new Product("seed-gym", "Gym Shoes", 1.0, "ic_gym_shoes"));
+        samples.add(new Product("seed-run", "Running Shoes", 1.0, "ic_running_shoes"));
+        samples.add(new Product("seed-casual", "Casual Shoes", 1.0, "ic_casual_shoes"));
+        samples.add(new Product("seed-office", "Office Shoes", 1.0, "ic_office_shoes"));
+        samples.add(new Product("seed-date", "Date Night Shoes", 1.0, "ic_date_night_shoes"));
+        return samples;
+>>>>>>> 9820f5e673f6959a4f4a47758a47272a917df61d
     }
 }

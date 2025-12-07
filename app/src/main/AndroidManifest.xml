@@ -33,10 +33,6 @@
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />
         <activity
-            android:name=".GooglePayConfig"
-            android:exported="false"
-            android:theme="@style/Theme.Schoolapp" />
-        <activity
             android:name=".CheckoutActivity"
             android:exported="false"
             android:theme="@style/Theme.Schoolapp" />

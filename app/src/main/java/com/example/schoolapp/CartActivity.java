@@ -28,7 +28,7 @@ public class CartActivity extends AppCompatActivity {
         recyclerCart.setLayoutManager(new LinearLayoutManager(this));
 
         List<CartItem> items = CartManager.getInstance().getItems();
-        adapter = new CartAdapter(items);
+        adapter = new CartAdapter(items, this::updateTotal);
         recyclerCart.setAdapter(adapter);
 
         tvTotal = findViewById(R.id.tvCartTotal);
