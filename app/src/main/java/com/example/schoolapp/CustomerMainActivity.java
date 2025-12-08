@@ -66,41 +66,41 @@ public class CustomerMainActivity extends AppCompatActivity {
     }
 
     private void seedSampleProducts() {
-        Map<String, Object> salt = new HashMap<>();
-        salt.put("name", "Salt");
-        salt.put("price", 10.0);
-        salt.put("imageUrl", "https://cdn.pixabay.com/photo/2014/07/10/23/14/salt-391208_1280.jpg");
-        salt.put("available", true);
+        Map<String, Object> officeShoes = new HashMap<>();
+        officeShoes.put("name", "Office Shoes");
+        officeShoes.put("price", 1.0);
+        officeShoes.put("available", true);
+        officeShoes.put("imageResName", "shoe_office");
 
-        Map<String, Object> blackPepper = new HashMap<>();
-        blackPepper.put("name", "Black Pepper");
-        blackPepper.put("price", 15.0);
-        blackPepper.put("imageUrl", "https://cdn.pixabay.com/photo/2018/05/07/13/53/peppercorns-3386330_1280.jpg");
-        blackPepper.put("available", true);
+        Map<String, Object> officialShoes = new HashMap<>();
+        officialShoes.put("name", "Official Shoes");
+        officialShoes.put("price", 1.0);
+        officialShoes.put("available", true);
+        officialShoes.put("imageResName", "shoe_official");
 
-        Map<String, Object> garlicPowder = new HashMap<>();
-        garlicPowder.put("name", "Garlic Powder");
-        garlicPowder.put("price", 18.0);
-        garlicPowder.put("imageUrl", "https://cleangreensimple.com/wp-content/uploads/how-to-make-garlic-powder.jpg");
-        garlicPowder.put("available", true);
+        Map<String, Object> runningShoes = new HashMap<>();
+        runningShoes.put("name", "Running Shoes");
+        runningShoes.put("price", 1.0);
+        runningShoes.put("available", true);
+        runningShoes.put("imageResName", "shoe_running");
 
-        Map<String, Object> onionPowder = new HashMap<>();
-        onionPowder.put("name", "Onion Powder");
-        onionPowder.put("price", 12.0);
-        onionPowder.put("imageUrl", "https://png.pngtree.com/png-vector/20241012/ourlarge/pngtree-onion-powder-jar-on-transparent-background-png-image_14079311.png");
-        onionPowder.put("available", true);
+        Map<String, Object> sportShoes = new HashMap<>();
+        sportShoes.put("name", "Sport Shoes");
+        sportShoes.put("price", 1.0);
+        sportShoes.put("available", true);
+        sportShoes.put("imageResName", "shoe_sport");
 
-        Map<String, Object> turmeric = new HashMap<>();
-        turmeric.put("name", "Turmeric");
-        turmeric.put("price", 14.0);
-        turmeric.put("imageUrl", "https://png.pngtree.com/png-clipart/20241129/original/pngtree-turmeric-powder-in-a-wooden-spoon-isolated-png-image_17407509.png");
-        turmeric.put("available", true);
+        Map<String, Object> casualShoes = new HashMap<>();
+        casualShoes.put("name", "Casual Shoes");
+        casualShoes.put("price", 1.0);
+        casualShoes.put("available", true);
+        casualShoes.put("imageResName", "shoe_casual");
 
-        db.collection("products").document("salt").set(salt);
-        db.collection("products").document("black_pepper").set(blackPepper);
-        db.collection("products").document("garlic_powder").set(garlicPowder);
-        db.collection("products").document("onion_powder").set(onionPowder);
-        db.collection("products").document("turmeric").set(turmeric);
+        db.collection("products").document("office_shoes").set(officeShoes);
+        db.collection("products").document("official_shoes").set(officialShoes);
+        db.collection("products").document("running_shoes").set(runningShoes);
+        db.collection("products").document("sport_shoes").set(sportShoes);
+        db.collection("products").document("casual_shoes").set(casualShoes);
     }
 
     private void loadProductsFromFirestore() {
